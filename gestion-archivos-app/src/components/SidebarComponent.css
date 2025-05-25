@@ -1,0 +1,69 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -280px; /* Oculto por defecto */
+  width: 280px;
+  height: 100vh;
+  background-color: #343a40; /* Color oscuro de Bootstrap */
+  color: white;
+  padding-top: 56px; /* Altura del navbar para que no se superponga */
+  transition: left 0.3s ease-in-out;
+  z-index: 1020; /* Menor que el navbar si el navbar es sticky o fixed y debe estar encima */
+  border-right: 1px solid #495057;
+}
+
+.sidebar.open {
+  left: 0; /* Visible */
+}
+
+.sidebar .nav-link {
+  color: rgba(255, 255, 255, 0.75);
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  border-radius: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.sidebar .nav-link:hover {
+  color: white;
+  background-color: #495057;
+}
+
+.sidebar .nav-link.active {
+  color: white;
+  background-color: #007bff; /* Azul primario de Bootstrap */
+}
+
+.sidebar .nav-link .me-2 { /* Espacio para el icono */
+  min-width: 30px; /* Asegura alineación si algunos textos son más largos */
+}
+
+/* Overlay para el contenido principal cuando el sidebar está abierto en móviles */
+.main-content-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1010; /* Debajo del sidebar */
+}
+
+@media (max-width: 991.98px) { /* lg breakpoint de Bootstrap */
+  .sidebar.open ~ .main-content-overlay {
+    display: block;
+  }
+}
+
+/* Ajuste del contenido principal cuando el sidebar está abierto en pantallas grandes */
+.main-content.sidebar-open {
+  padding-left: 280px;
+  transition: padding-left 0.3s ease-in-out;
+}
+
+.main-content {
+  transition: padding-left 0.3s ease-in-out;
+  padding-left: 0; /* Por defecto no hay padding */
+}
