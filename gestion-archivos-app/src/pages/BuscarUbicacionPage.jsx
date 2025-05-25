@@ -36,31 +36,31 @@ const BuscarUbicacionPage = () => {
 
   return (
     <div>
-      <Link to="/" className="btn btn-light mb-3">‹ Volver a Inicio</Link>
-      <h2 className="mb-4">Buscar Ubicación de Documento</h2>
+      <Link to="/" className="link-volver">‹ Volver a Inicio</Link>
+      <h2 className="mb-4 mt-3">Buscar Ubicación de Documento</h2>
       <form onSubmit={handleSearch} className="mb-4">
-        <div className="input-group">
+        <div className="input-group input-group-neumorphic"> {/* Clase contenedora para input group */}
           <input
             type="text"
-            className="form-control"
+            className="form-control form-control-neumorphic"
             placeholder="Ingrese nombre, ID o tipo de documento a buscar..."
             value={terminoBusqueda}
             onChange={handleInputChange}
           />
-          <button className="btn btn-primary" type="submit">Buscar</button>
+          <button className="btn btn-neumorphic btn-neumorphic-primary" type="submit">Buscar</button>
         </div>
       </form>
 
       {busquedaRealizada && (
         resultados.length > 0 ? (
-          <div>
-            <h4>Resultados de la búsqueda:</h4>
-            <ul className="list-group">
+          <div className="card"> {/* Envolver resultados en una card */}
+            <div className="card-header">Resultados de la búsqueda:</div>
+            <ul className="list-group list-group-flush"> {/* list-group-flush para quitar bordes dentro de la card */}
               {resultados.map(doc => (
-                <li className="list-group-item" key={doc.id + doc.tipo}>
+                <li className="list-group-item" style={{backgroundColor: 'var(--neumorphism-bg-color)', color: 'var(--neumorphism-text-color)'}} key={doc.id + doc.tipo}>
                   <strong>{doc.nombre}</strong> (Tipo: {doc.tipo})
                   <br />
-                  Ubicación: Pasillo {doc.ubicacion.pasillo}, Estante {doc.ubicacion.estante}, Columna {doc.ubicacion.columna}, Fila {doc.ubicacion.fila}
+                  <small>Ubicación: Pasillo {doc.ubicacion.pasillo}, Estante {doc.ubicacion.estante}, Columna {doc.ubicacion.columna}, Fila {doc.ubicacion.fila}</small>
                 </li>
               ))}
             </ul>

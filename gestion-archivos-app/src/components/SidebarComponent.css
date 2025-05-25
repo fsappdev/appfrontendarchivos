@@ -4,12 +4,11 @@
   left: -280px; /* Oculto por defecto */
   width: 280px;
   height: 100vh;
-  background-color: #343a40; /* Color oscuro de Bootstrap */
-  color: white;
-  padding-top: 56px; /* Altura del navbar para que no se superponga */
+  background-color: var(--neumorphism-bg-color);
+  padding-top: 70px; /* Ajustar a la altura del navbar + un poco de margen */
   transition: left 0.3s ease-in-out;
-  z-index: 1020; /* Menor que el navbar si el navbar es sticky o fixed y debe estar encima */
-  border-right: 1px solid #495057;
+  z-index: 1020; 
+  box-shadow: 7px 0px 15px -7px var(--neumorphism-shadow-dark); /* Sombra solo a la derecha */
 }
 
 .sidebar.open {
@@ -17,26 +16,35 @@
 }
 
 .sidebar .nav-link {
-  color: rgba(255, 255, 255, 0.75);
-  padding: 0.75rem 1.25rem;
+  color: var(--neumorphism-text-color);
+  padding: 0.85rem 1.5rem; /* Aumentado padding */
   display: flex;
   align-items: center;
-  border-radius: 0.25rem;
-  margin-bottom: 0.25rem;
+  border-radius: 8px; /* Bordes redondeados */
+  margin: 0.5rem 1rem; /* Margen para separar items y de los bordes del sidebar */
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
 }
 
 .sidebar .nav-link:hover {
-  color: white;
-  background-color: #495057;
+  color: var(--primary-color);
+  background-color: var(--neumorphism-bg-color); /* Mantiene el fondo */
+  box-shadow: 3px 3px 6px var(--neumorphism-shadow-dark),
+              -3px -3px 6px var(--neumorphism-shadow-light);
 }
 
 .sidebar .nav-link.active {
-  color: white;
-  background-color: #007bff; /* Azul primario de Bootstrap */
+  color: var(--primary-color);
+  font-weight: bold;
+  background-color: var(--neumorphism-bg-color);
+  box-shadow: inset 3px 3px 6px var(--neumorphism-shadow-dark),
+              inset -3px -3px 6px var(--neumorphism-shadow-light);
 }
 
 .sidebar .nav-link .me-2 { /* Espacio para el icono */
-  min-width: 30px; /* Asegura alineación si algunos textos son más largos */
+  min-width: 35px; /* Asegura alineación */
+  display: inline-flex;
+  justify-content: center;
 }
 
 /* Overlay para el contenido principal cuando el sidebar está abierto en móviles */

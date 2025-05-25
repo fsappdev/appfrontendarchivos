@@ -1,1 +1,79 @@
 /* Estilos personalizados para App pueden ir aquí si son necesarios */
+
+/* Ajustes para que el contenido principal no se solape con el navbar fijo */
+.main-content {
+  padding-top: 70px; /* Ajustar según la altura real del navbar */
+  padding-bottom: 20px; /* Espacio al final de la página */
+  transition: padding-left 0.3s ease-in-out; /* Para la animación del sidebar */
+}
+
+/* Cuando el sidebar está abierto en desktop, empujar el contenido */
+.main-content.sidebar-open {
+  padding-left: 280px; /* Ancho del sidebar */
+}
+
+
+/* Títulos de página */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--neumorphism-text-color);
+  font-weight: 600; /* Un poco más de peso para los títulos */
+}
+
+/* Estilo para los links de "Volver a Inicio" en las páginas */
+.link-volver {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: var(--neumorphism-text-color);
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  background-color: var(--neumorphism-bg-color);
+  box-shadow: 3px 3px 6px var(--neumorphism-shadow-dark),
+              -3px -3px 6px var(--neumorphism-shadow-light);
+  transition: all 0.2s ease-in-out;
+}
+
+.link-volver:hover {
+  color: var(--primary-color);
+  box-shadow: 1px 1px 3px var(--neumorphism-shadow-dark),
+              -1px -1px 3px var(--neumorphism-shadow-light);
+}
+
+/* Ajustes para que los componentes de Bootstrap usen los nuevos estilos */
+.form-label {
+  color: var(--neumorphism-text-color);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.card-header {
+  background-color: transparent; /* Para que tome el fondo de la card */
+  border-bottom: 1px solid rgba(0,0,0,0.05); /* Una línea sutil */
+  padding: 0.75rem 1.25rem;
+  font-weight: 500;
+  color: var(--neumorphism-text-color);
+}
+
+/* Para asegurar que el texto dentro de las cards sea legible */
+.card-body, .card-title, .card-text {
+  color: var(--neumorphism-text-color);
+}
+
+.card-title {
+  font-weight: 600;
+}
+
+/* Quitar el box-shadow por defecto de los botones de Bootstrap si usamos los nuestros */
+.btn.btn-primary, .btn.btn-secondary, .btn.btn-success, .btn.btn-light, .btn.btn-danger {
+  box-shadow: none !important; /* Evitar conflicto con .btn-neumorphic */
+}
+
+/* Estilo para el input group de la página de búsqueda */
+.input-group-neumorphic .form-control-neumorphic {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.input-group-neumorphic .btn-neumorphic {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}

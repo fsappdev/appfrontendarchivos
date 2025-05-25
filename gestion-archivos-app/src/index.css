@@ -1,4 +1,12 @@
 /* Estilos globales pueden ir aquí */
+:root {
+  --neumorphism-bg-color: #e0e5ec; /* Un gris claro, base para neumorfismo */
+  --neumorphism-shadow-light: rgba(255, 255, 255, 0.7);
+  --neumorphism-shadow-dark: rgba(163, 177, 198, 0.6);
+  --neumorphism-text-color: #555;
+  --primary-color: #007bff;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -6,10 +14,121 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f8f9fa; /* Un gris claro para un fondo sobrio */
+  background-color: var(--neumorphism-bg-color);
+  color: var(--neumorphism-text-color);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Estilos base para cards con sombra */
+.card {
+  border: none; /* El neumorfismo y las sombras a menudo eliminan bordes tradicionales */
+  box-shadow: 7px 7px 15px var(--neumorphism-shadow-dark),
+              -7px -7px 15px var(--neumorphism-shadow-light);
+  border-radius: 15px !important; /* Bordes más redondeados para suavizar */
+  background-color: var(--neumorphism-bg-color); /* Mismo color que el fondo para efecto "emergente" */
+}
+
+/* Estilos para botones con efecto neumorfista */
+.btn-neumorphic {
+  background-color: var(--neumorphism-bg-color);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: var(--neumorphism-text-color);
+  box-shadow: 5px 5px 10px var(--neumorphism-shadow-dark),
+              -5px -5px 10px var(--neumorphism-shadow-light);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-neumorphic:hover {
+  color: var(--primary-color);
+  box-shadow: 3px 3px 6px var(--neumorphism-shadow-dark),
+              -3px -3px 6px var(--neumorphism-shadow-light);
+}
+
+.btn-neumorphic:active, .btn-neumorphic.active {
+  box-shadow: inset 5px 5px 10px var(--neumorphism-shadow-dark),
+              inset -5px -5px 10px var(--neumorphism-shadow-light);
+  color: var(--primary-color);
+}
+
+/* Botones primarios neumórficos */
+.btn-neumorphic-primary {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+.btn-neumorphic-primary:hover {
+  color: #0056b3; /* Un azul más oscuro al hacer hover */
+}
+.btn-neumorphic-primary:active, .btn-neumorphic-primary.active {
+  color: #0056b3;
+}
+
+/* Botones secundarios/light neumórficos */
+.btn-neumorphic-light {
+  color: var(--neumorphism-text-color);
+}
+.btn-neumorphic-light:hover {
+  color: #333;
+}
+.btn-neumorphic-light:active, .btn-neumorphic-light.active {
+   color: #333;
+}
+
+/* Inputs con estilo neumórfico */
+.form-control-neumorphic {
+  background-color: var(--neumorphism-bg-color);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  color: var(--neumorphism-text-color);
+  box-shadow: inset 3px 3px 6px var(--neumorphism-shadow-dark),
+              inset -3px -3px 6px var(--neumorphism-shadow-light);
+}
+.form-control-neumorphic:focus {
+  background-color: var(--neumorphism-bg-color);
+  color: var(--neumorphism-text-color);
+  box-shadow: inset 5px 5px 10px var(--neumorphism-shadow-dark),
+              inset -5px -5px 10px var(--neumorphism-shadow-light);
+  outline: none;
+}
+
+/* Checkbox neumórfico - Simplificado, el estilo completo es complejo */
+.form-check-input-neumorphic {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: var(--neumorphism-bg-color);
+  border-radius: 5px;
+  box-shadow: 3px 3px 6px var(--neumorphism-shadow-dark),
+              -3px -3px 6px var(--neumorphism-shadow-light);
+  position: relative;
+  cursor: pointer;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.form-check-input-neumorphic:checked {
+  box-shadow: inset 3px 3px 6px var(--neumorphism-shadow-dark),
+              inset -3px -3px 6px var(--neumorphism-shadow-light);
+}
+
+.form-check-input-neumorphic:checked::after {
+  content: '✔'; /* O un SVG */
+  color: var(--primary-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+}
+
+.form-check-label-neumorphic {
+  vertical-align: middle;
+  cursor: pointer;
 }

@@ -54,8 +54,8 @@ const IngresarCuentaAnualPage = () => {
 
   return (
     <div>
-      <Link to="/" className="btn btn-light mb-3">‹ Volver a Inicio</Link>
-      <h2 className="mb-4">Ingresar Archivos de Cuenta Anual</h2>
+      <Link to="/" className="link-volver">‹ Volver a Inicio</Link>
+      <h2 className="mb-4 mt-3">Ingresar Archivos de Cuenta Anual</h2>
       <form onSubmit={handleSubmit}>
         <div className="card mb-4">
           <div className="card-header">
@@ -63,16 +63,16 @@ const IngresarCuentaAnualPage = () => {
           </div>
           <div className="card-body">
             {tiposDocumento.map(doc => (
-              <div className="form-check mb-2" key={doc.id}>
+              <div className="form-check mb-3" key={doc.id}> {/* Aumentado mb */}
                 <input
-                  className="form-check-input"
+                  className="form-check-input-neumorphic"
                   type="checkbox"
                   name={doc.id}
                   id={`doc-${doc.id}`}
                   checked={!!documentosSeleccionados[doc.id]}
                   onChange={handleCheckboxChange}
                 />
-                <label className="form-check-label" htmlFor={`doc-${doc.id}`}>
+                <label className="form-check-label-neumorphic ms-2" htmlFor={`doc-${doc.id}`}> {/* Añadido ms-2 */}
                   {doc.label}
                 </label>
               </div>
@@ -88,25 +88,25 @@ const IngresarCuentaAnualPage = () => {
             <div className="row">
               <div className="col-md-3 mb-3">
                 <label htmlFor="pasillo" className="form-label">Pasillo</label>
-                <input type="text" className="form-control" id="pasillo" name="pasillo" value={ubicacion.pasillo} onChange={handleInputChange} required />
+                <input type="text" className="form-control form-control-neumorphic" id="pasillo" name="pasillo" value={ubicacion.pasillo} onChange={handleInputChange} required />
               </div>
               <div className="col-md-3 mb-3">
                 <label htmlFor="estante" className="form-label">Estante</label>
-                <input type="text" className="form-control" id="estante" name="estante" value={ubicacion.estante} onChange={handleInputChange} required />
+                <input type="text" className="form-control form-control-neumorphic" id="estante" name="estante" value={ubicacion.estante} onChange={handleInputChange} required />
               </div>
               <div className="col-md-3 mb-3">
                 <label htmlFor="columna" className="form-label">Columna</label>
-                <input type="text" className="form-control" id="columna" name="columna" value={ubicacion.columna} onChange={handleInputChange} required />
+                <input type="text" className="form-control form-control-neumorphic" id="columna" name="columna" value={ubicacion.columna} onChange={handleInputChange} required />
               </div>
               <div className="col-md-3 mb-3">
                 <label htmlFor="fila" className="form-label">Fila</label>
-                <input type="text" className="form-control" id="fila" name="fila" value={ubicacion.fila} onChange={handleInputChange} required />
+                <input type="text" className="form-control form-control-neumorphic" id="fila" name="fila" value={ubicacion.fila} onChange={handleInputChange} required />
               </div>
             </div>
           </div>
         </div>
 
-        <button type="submit" className="btn btn-success">Guardar Entrada</button>
+        <button type="submit" className="btn btn-neumorphic btn-neumorphic-primary">Guardar Entrada</button>
       </form>
     </div>
   );
