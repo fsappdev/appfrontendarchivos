@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const datosAlmacenados = [
   { id: 'balanceGeneral', tipo: 'Cuenta Anual', nombre: 'Balance General Anual', ubicacion: { pasillo: 'A1', estante: '03', columna: '01', fila: 'B' } },
   { id: 'contratoTrabajo', tipo: 'Legajo', nombre: 'Contrato de Trabajo Firmado', ubicacion: { pasillo: 'B2', estante: '01', columna: '05', fila: 'A' } },
-  { id: 'politicaCalidad', tipo: 'Control Documental', nombre: 'Política de Calidad Vigente', ubicacion: { pasillo: 'C3', estante: '02', columna: '02', fila: 'C' } },
+  { id: 'politicaCalidad', tipo: 'Cuaderno Documental', nombre: 'Política de Calidad Vigente', ubicacion: { pasillo: 'C3', estante: '02', columna: '02', fila: 'C' } },
   { id: 'memoriaAnual', tipo: 'Cuenta Anual', nombre: 'Memoria Anual Descriptiva', ubicacion: { pasillo: 'A1', estante: '03', columna: '01', fila: 'C' } },
 ];
 

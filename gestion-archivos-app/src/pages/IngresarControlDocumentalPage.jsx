@@ -43,10 +43,10 @@ const IngresarControlDocumentalPage = () => {
       return;
     }
 
-    console.log('Guardando documentos de Control Documental:');
+    console.log('Guardando documentos de Cuaderno Documental:');
     console.log('Documentos:', documentosGuardar);
     console.log('Ubicación:', ubicacion);
-    alert('Documentos de Control Documental guardados (ver consola para detalles).');
+    alert('Documentos de Cuaderno Documental guardados (ver consola para detalles).');
     setDocumentosSeleccionados({});
     setUbicacion({ pasillo: '', estante: '', columna: '', fila: '' });
   };
@@ -54,11 +54,11 @@ const IngresarControlDocumentalPage = () => {
   return (
     <div>
       <Link to="/" className="btn btn-light mb-3">‹ Volver a Inicio</Link>
-      <h2 className="mb-4">Ingresar Archivos de Control Documental</h2>
+      <h2 className="mb-4">Ingresar Archivos de Cuaderno Documental</h2>
       <form onSubmit={handleSubmit}>
         <div className="card mb-4">
           <div className="card-header">
-            Seleccione los documentos recibidos de control documental:
+            Seleccione los documentos recibidos de Cuaderno documental:
           </div>
           <div className="card-body">
             {tiposDocumento.map(doc => (

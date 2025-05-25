@@ -38,7 +38,7 @@ const HomePage = () => {
         <div className="col-md-6 col-lg-3 mb-4">
           <div className="card h-100">
             <div className="card-body" style={cardStyle}>
-              <h5 className="card-title">Ingresar Archivos de Control Documental</h5>
+              <h5 className="card-title">Ingresar Archivos de Cuaderno Documental</h5>
             </div>
             <div className="card-footer text-center">
               <Link to="/ingresar-control-documental" className="btn btn-primary">Acceder</Link>
