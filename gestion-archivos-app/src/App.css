@@ -1,1 +1,44 @@
-/* Estilos personalizados para App pueden ir aquí si son necesarios */
+/* Estilos personalizados para App */
+
+/* Estilo base para las cards */
+.card {
+
+  border-radius: 0.75rem; /* Esquinas un poco más redondeadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08), 0 6px 12px rgba(0, 0, 0, 0.05); /* Sombra sutil para profundidad */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: none; /* Opcional: remover el borde por defecto de Bootstrap si la sombra es suficiente */
+}
+
+/* Efecto hover para las cards */
+.card:hover {
+  transform: translateY(-5px) scale(1.02); /* Eleva y agranda ligeramente la card */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 8px 15px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada en hover */
+}
+
+/* Ajustes para el contenido de las cards en HomePage para asegurar que el título no esté demasiado pegado si hay poco contenido */
+.homepage-card-body .card-title {
+  margin-bottom: 0.5rem; /* Ajusta según sea necesario */
+}
+
+/* Opcional: Estilo para los botones dentro de las cards para que tengan un look más moderno si se desea */
+
+.card .btn-primary {
+  background-color: #0056b3; 
+  border-color: #0056b3; 
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.card .btn-primary:hover {
+  background-color: #004085; 
+  border-color: #00376e; 
+}
+
+
+/* Para las páginas de 'Ingresar', podemos asegurar que el contenedor principal tenga un poco de margen superior */
+/* Si todas las páginas de 'Ingresar' tienen un div contenedor principal similar, podríamos darle una clase */
+/* Por ahora, los estilos de .card aplicarán a los contenedores de formulario que ya usan esa clase. */
+
+h1.mb-4.text-center, h2.mb-4 {
+  color: #333; /* Un color de texto un poco más oscuro para los títulos */
+  font-weight: 600; /* Un poco más de peso para los títulos */
+}
